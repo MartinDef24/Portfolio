@@ -5,4 +5,14 @@
 body {
     background: linear-gradient(0deg, #4877BD 0%, #000001 100%);
     background-repeat: no-repeat;
+    color: white;
+}
+
+.text-roboto {
+    font-family: 'Roboto';
+    font-weight: bold;
+}
+
+.text-sourcesans {
+    font-family: 'SourceSans';
 }
