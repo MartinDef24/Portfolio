@@ -10,6 +10,48 @@
             "TypeScript",
             "TailwindCSS",
             "Git"
-        ]
+        ],
+        "Logo":"assets/logo/battlekart.png"
+    },
+    {
+        "Title":"Développeur FullStack",
+        "ShortDescription":"Au cours de cette alternance, je conçois et mets en production un outil complet de gestion de formation, essentiel à la digitalisation des processus internes. Je développe notamment un système qui permet aux formateurs de créer et gérer des formations, d'y inscrire des utilisateurs, et de suivre leurs progrès détaillés (remarques, absences, notes). Cet outil offre également aux apprenants un accès direct à leurs informations personnalisées.",
+        "LongDescription":"",
+        "DateDebutContrat":"Octobre 2018",
+        "DateFinContrat":"Septembre 2019",
+        "Technos": [
+            "HTML",
+            "CSS",
+            "PHP",
+            "MySQL"
+        ],
+        "Logo":"assets/logo/eurotunnel.png"
+    },
+    {
+        "Title":"Développeur Front-End",
+        "ShortDescription":"j'ai développé un outil innovant permettant la génération de bandeaux de consentement utilisateurs (cookies), en réponse aux exigences de la RGPD alors émergentes. Cet outil offrait une personnalisation complète(couleurs, texte, forme et emplacement de la bannière), ce qui permettait aux sites cibles de se conformer à la charte graphique et aux obligations légales.",
+        "LongDescription":"",
+        "DateDebutContrat":"Fevrier 2018",
+        "DateFinContrat":"Juillet 2018",
+        "Technos": [
+            "HTML",
+            "CSS",
+            "Javascript",
+            "Bootstrap"
+        ],
+        "Logo":"assets/logo/meetyourdata.png"
+    },
+    {
+        "Title":"Développeur Front-End",
+        "ShortDescription":"Dans le cadre d'une formation dédiée, j'ai développé un site internet complet dont l'objectif est d'explorer et de maîtriser Angular et ses composants avancés. Ce projet personnel met en lumière ma capacité à construire des applications robustes avec ce framework, consolidant ainsi mes connaissances pratiques à travers un cas d'usage concret.",
+        "LongDescription":"",
+        "DateDebutContrat":"Février 2024",
+        "DateFinContrat":"Février 2024",
+        "Technos": [
+            "Angular",
+            "TypeScript",
+            "Git"
+        ],
+        "Logo":-1
     }
 ]

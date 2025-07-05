@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { Contact } from "../contact/contact";
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [Contact],
   standalone:true,
   templateUrl: './home.html',
   styleUrl: './home.css'
