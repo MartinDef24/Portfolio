@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Header } from './components/header/header';
 import { Footer } from './components/footer/footer';
 import { RouterOutlet } from '@angular/router';
+import {ProjectsService} from "./services/projects/projects-service";
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
@@ -9,8 +10,5 @@ import { RouterOutlet } from '@angular/router';
     standalone:true,
     imports: [Header, Footer, RouterOutlet],
 })
-export class AppComponent implements OnInit {
-  ngOnInit(): void {
-    
-  }
+export class AppComponent {
 }

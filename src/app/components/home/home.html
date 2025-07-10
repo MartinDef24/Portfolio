@@ -6,11 +6,11 @@
     </div>
     <div class="w-[40%] my-auto">
         <p class="text-justify">
-            Bienvenue ! Je suis Martin, votre développeur Front-End Angular. 
+            Bienvenue ! Je suis Martin, votre développeur Front-End Angular.
             <br>
-            Mon objectif ? Transformer vos idées en interfaces web robustes et performantes. 
-            Sur ce portfolio, découvrez mes réalisations concrètes où j'ai mis à profit mes compétences en 
-            Angular, TypeScript, JavaScript, HTML et CSS. Explorez mes projets et mon parcours, 
+            Mon objectif ? Transformer vos idées en interfaces web robustes et performantes.
+            Sur ce portfolio, découvrez mes réalisations concrètes où j'ai mis à profit mes compétences en
+            Angular, TypeScript, JavaScript, HTML et CSS. Explorez mes projets et mon parcours,
             et n'hésitez pas à me contacter pour discuter de votre prochain défi technique !
         </p>
     </div>
@@ -18,11 +18,34 @@
 
 <!---Présentation des différentes missions-->
 <h2 class="text-center text-3xl mb-5">Réalisations & Compétences Clés</h2>
-<p class="text-center w-3/4 mx-auto mb-24">
-    Découvrez ci-dessous un aperçu de mes projets les plus significatifs, démontrant ma capacité à concevoir 
-    et développer des interfaces web robustes et performantes. 
+<p class="text-center w-3/4 mx-auto mb-10">
+    Découvrez ci-dessous un aperçu de mes projets les plus significatifs, démontrant ma capacité à concevoir
+    et développer des interfaces web robustes et performantes.
     Mon approche vise à transformer vos idées en expériences utilisateur fluides et intuitives.
 </p>
+<div class="w-11/12 m-auto flex justify-between mb-24">
+  <div class="w-[10%] m-auto text-center">
+    <i class="fa-solid fa-arrow-left text-white text-3xl"></i>
+  </div>
+  <div class="flex justify-around w-[80%] my-auto">
+    @for (project of projects; track project) {
+      <div class="border-white rounded-lg bg-white/50 p-5">
+        <div class="h-40">
+          @if(project.Logo != '-1') {
+            <img class="m-auto" width="150px" [src]="project.Logo">
+          }
+        </div>
+        <div class="text-center">
+          <h3 class="text-2xl mb-5">{{project.Title}}</h3>
+          <em>{{project.DateDebutContrat + ' - ' + project.DateFinContrat}}</em>
+        </div>
+      </div>
+    }
+  </div>
+  <div class="w-[10%] m-auto text-center">
+    <i class="fa-solid fa-arrow-right text-white text-3xl"></i>
+  </div>
+</div>
 
 <!---section de contact en bas de page-->
 <app-contact></app-contact>
