@@ -24,29 +24,48 @@
     Mon approche vise à transformer vos idées en expériences utilisateur fluides et intuitives.
 </p>
 <div class="w-11/12 m-auto flex justify-between mb-24">
-  <div class="w-[10%] m-auto text-center">
+  <div class="w-[10%] m-auto text-center cursor-pointer" (click)="prevProject()">
     <i class="fa-solid fa-arrow-left text-white text-3xl"></i>
   </div>
-  <div class="flex justify-around w-[80%] my-auto">
-    @for (project of projects; track project) {
-      <div class="border-white rounded-lg bg-white/50 p-5">
-        <div class="h-40">
+  <div class="flex justify-around w-[80%] my-auto flex-nowrap overflow-hidden">
+    @for (project of displayedProjects; track project.Title) {
+      <!-- Ajout de min-w-0 pour s'assurer que les éléments flex ne débordent pas de leur conteneur -->
+      <div class="border-white border rounded-lg bg-white/[.40] p-5 mx-2 flex-shrink-0 w-[30%] min-w-0 carousel-item">
+        <div class="h-40 flex items-center justify-center">
           @if(project.Logo != '-1') {
-            <img class="m-auto" width="150px" [src]="project.Logo">
+            <img class="m-auto max-h-full max-w-full object-contain" [src]="project.Logo">
           }
         </div>
-        <div class="text-center">
-          <h3 class="text-2xl mb-5">{{project.Title}}</h3>
-          <em>{{project.DateDebutContrat + ' - ' + project.DateFinContrat}}</em>
+        <!-- Project Details -->
+        <div class="text-center pb-7">
+          <h3 class="text-2xl h-[50px] flex items-center justify-center">{{project.Title}}</h3>
+          <span class="block h-[60px] flex items-center justify-center">
+            <em>{{project.DateDebutContrat + ' - ' + project.DateFinContrat}}</em>
+          </span>
+          <p class="text-justify h-[320px] overflow-auto">
+            {{project.ShortDescription}}
+          </p>
+          <div class="text-left h-[60px] flex items-center">
+            <span>
+              <strong class="underline">Technos utilisées: </strong>
+              {{project.Technos.join(', ')}}
+            </span>
+          </div>
+          <a class=" bg-white text-black rounded-xl px-5 py-3 inline-block mt-4" href="#">En savoir plus</a>
         </div>
+      </div>
+    } @empty {
+      <!-- Message if no projects are available -->
+      <div class="text-white text-center w-full">
+        Aucun projet disponible pour le moment.
       </div>
     }
   </div>
-  <div class="w-[10%] m-auto text-center">
+
+  <div class="w-[10%] m-auto text-center cursor-pointer" (click)="nextProject()">
     <i class="fa-solid fa-arrow-right text-white text-3xl"></i>
   </div>
 </div>
 
-<!---section de contact en bas de page-->
 <app-contact></app-contact>
 
