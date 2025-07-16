@@ -14,8 +14,8 @@ import { ProjectInterface } from "../../interfaces/project-interface";
 export class Home implements OnInit {
   projects: ProjectInterface[] = [];
   currentIndex: number = 0;
-  cardWidth: number = 30;       // largeur fixe de chaque carte
-  cardGapPx: number = 3;        // espace entre les cartes
+  cardWidth: number = 30;
+  cardGapPx: number = 3;
   visibleItems: number = 3;
 
   constructor(private projectService: ProjectsService) {}
@@ -26,16 +26,21 @@ export class Home implements OnInit {
 
   nextProject(): void {
     if (this.projects.length <= this.visibleItems) return;
-    this.currentIndex = (this.currentIndex + 1) % this.projects.length;
 
-    if (this.currentIndex + this.visibleItems > this.projects.length) {
+    if (this.currentIndex >= this.projects.length - this.visibleItems) {
       this.currentIndex = 0;
+    } else {
+      this.currentIndex++;
     }
   }
 
   prevProject(): void {
     if (this.projects.length <= this.visibleItems) return;
-    this.currentIndex =
-      (this.currentIndex - 1 + this.projects.length) % this.projects.length;
+
+    if (this.currentIndex === 0) {
+      this.currentIndex = this.projects.length - this.visibleItems;
+    } else {
+      this.currentIndex--;
+    }
   }
 }

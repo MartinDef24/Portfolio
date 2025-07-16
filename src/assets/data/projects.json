@@ -11,7 +11,8 @@
             "TailwindCSS",
             "Git"
         ],
-        "Logo":"assets/logo/battlekart.png"
+        "Logo":"assets/logo/battlekart.png",
+        "Slug": "battlekart"
     },
     {
         "Title":"Développeur FullStack",
@@ -25,7 +26,8 @@
             "PHP",
             "MySQL"
         ],
-        "Logo":"assets/logo/eurotunnel.png"
+        "Logo":"assets/logo/eurotunnel.png",
+        "Slug": "eurotunnel"
     },
     {
         "Title":"Développeur Front-End",
@@ -39,7 +41,8 @@
             "Javascript",
             "Bootstrap"
         ],
-        "Logo":"assets/logo/meetyourdata.png"
+        "Logo":"assets/logo/meetyourdata.png",
+        "Slug": "meet-your-data"
     },
     {
         "Title":"Développeur Front-End",
@@ -52,6 +55,7 @@
             "TypeScript",
             "Git"
         ],
-        "Logo":-1
+        "Logo":-1,
+        "Slug": "angular-formation"
     }
 ]
