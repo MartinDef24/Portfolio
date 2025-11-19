@@ -1,0 +1,70 @@
+<h1 class="text-3xl text-center mb-5">Contactez-moi</h1>
+<p class="text-justify w-10/12 mb-10 mx-auto">
+  Vous avez une idée, un projet en tête ou des questions sur mes services ? N'hésitez pas à me contacter directement !
+  Je suis là pour vous écouter, comprendre vos besoins et vous aider à trouver les solutions adaptées.
+  <br><br>
+  Que ce soit pour une demande de devis, un conseil ou simplement pour en savoir plus sur ce que je peux faire pour vous,
+  je serai ravi(e) d'échanger avec vous. Remplissez le formulaire ci-dessous ou utilisez mes coordonnées,
+  et commençons à bâtir votre succès ensemble.
+</p>
+<div class="w-1/3 mx-auto mb-24">
+  @if (responseEmail != '') {
+    <div class="text-center mt-24">
+      <span [innerHTML]="responseEmail"></span>
+    </div>
+
+  } @else {
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <div class="flex justify-between mb-5">
+        <div class="form-group w-[48%]">
+          <input class=" bg-white/25 border-sm rounded-3xl px-3 py-2 w-full border-white border" type="text" id="nom" formControlName="nom" placeholder="Votre nom">
+          @if (contactForm.get('nom')?.invalid && formSubmitted) {
+            <span class="italic text-sm error-message">
+            Le nom est obligatoire.
+          </span>
+          }
+        </div>
+
+        <div class="form-group w-[48%]">
+          <input class="bg-white/25 border-sm rounded-3xl px-3 py-2 w-full border-white border"  type="text" id="prenom" formControlName="prenom" placeholder="Votre prénom">
+          @if (contactForm.get('prenom')?.invalid && formSubmitted) {
+            <span class="italic text-sm error-message">
+            Le prénom est obligatoire.
+          </span>
+          }
+        </div>
+      </div>
+
+      <div class="form-group mb-5 w-full">
+        <input class="bg-white/25 border-sm rounded-3xl px-3 py-2 w-full border-white border" type="email" id="email" formControlName="email" placeholder="Votre email">
+        @if (contactForm.get('email')?.invalid && formSubmitted) {
+          <div class="error-message">
+            @if (contactForm.get('email')?.errors?.['required']) {
+              <span class="italic text-sm">L'email est obligatoire.</span>
+            }
+            @if (contactForm.get('email')?.errors?.['email']) {
+              <span class="italic text-sm">Veuillez entrer un email valide.</span>
+            }
+          </div>
+        }
+      </div>
+
+      <div class="form-group w-full mb-10">
+        <textarea class="bg-white/25 border-sm rounded-3xl px-3 py-2 w-full resize-none border-white border" id="message" formControlName="message" rows="5" placeholder="Votre message..."></textarea>
+        @if (contactForm.get('message')?.invalid && formSubmitted) {
+          <div class="error-message">
+            @if (contactForm.get('message')?.errors?.['required']) {
+              <span class="italic text-sm">Le message est obligatoire.</span>
+            }
+
+            @if (contactForm.get('message')?.errors?.['minlength']) {
+              <span class="italic text-sm">Le message doit contenir au moins 10 caractères.</span>
+            }
+          </div>
+        }
+      </div>
+
+      <button type="submit" class="flex mx-auto bg-white text-black px-10 py-2 rounded-full">Envoyer</button>
+    </form>
+  }
+</div>

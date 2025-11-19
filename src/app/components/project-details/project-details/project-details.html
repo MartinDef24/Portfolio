@@ -1,1 +1,43 @@
-<p>project-details works!</p>
+<div id="project-details" class="w-10/12 mx-auto mb-24">
+  <h1 class="text-center text-4xl mb-10">{{project.Title}}</h1>
+  <p class="text-justify mb-24">{{project.ShortDescription}}</p>
+  <h2 class="text-3xl mb-5">Mes missions</h2>
+  <ul class="mb-24">
+    @for (mission of project.Missions; track mission) {
+      <li [innerHTML]="'• '+ mission"></li>
+    }
+  </ul>
+  @if(project.Screenshots.length > 0) {
+    <h2 class="text-3xl mb-5">Mes réalisations</h2>
+    <div class="w-11/12 m-auto flex items-center mb-24 overflow-hidden relative">
+
+      @if (project.Screenshots.length > 3) {
+        <div class="w-[10%] text-center cursor-pointer z-10" (click)="prevProject()">
+          <i class="fa-solid fa-arrow-left text-white text-3xl"></i>
+        </div>
+      }
+
+      <!-- Rail -->
+      <div class="overflow-hidden w-[80%] mx-auto">
+        <div
+          class="flex transition-transform duration-500 ease-in-out gap-8"
+          [style.transform]="'translateX(-' + currentIndex * (cardWidth + cardGapPx) + '%)'"
+          [ngClass]="{'justify-center' : project.Screenshots.length <= 3}"
+        >
+          @for (image of project.Screenshots; track image) {
+            <div class="w-[31%] flex-shrink-0">
+              <img src="assets/realisations/{{project.Company}}/{{image}}" width="100%">
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Flèche droite -->
+      @if (project.Screenshots.length > 3) {
+        <div class="w-[10%] text-center cursor-pointer z-10" (click)="nextProject()">
+          <i class="fa-solid fa-arrow-right text-white text-3xl"></i>
+        </div>
+      }
+    </div>
+  }
+</div>

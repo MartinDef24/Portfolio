@@ -1,10 +1,12 @@
 export interface ProjectInterface {
   Title: string,
   ShortDescription:string,
-  LongDescription:string,
+  Missions:string[],
+  Screenshots:string[]
   DateDebutContrat:string,
   DateFinContrat:string,
   Technos:string[],
-  Logo:string
+  Logo:boolean,
+  Company: string
 }
 

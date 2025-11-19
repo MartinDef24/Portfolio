@@ -2,7 +2,17 @@
     {
         "Title":"Développeur Front-End",
         "ShortDescription":"Chez BattleKart, j'ai activement participé à la conception et au développement d'une multitude de modules internes essentiels pour optimiser la gestion des opérations. J'ai notamment créé des pages de centres dynamiques et administrables via ces modules, permettant une personnalisation flexible du contenu. Mon travail a également inclus une contribution significative au développement du nouveau site internet de l'entreprise.",
-        "LongDescription":"",
+        "Missions":[
+          "Refonte complètes des TV dans les centres",
+          "Refonte complètes du site internet : <a href='https://www.battlekart.com/fr/'>ici</a>",
+          "Développement de Module de personnalisation pour les pages de centres",
+          "Développement des nouvelles pages de centres : <a href='https://www.battlekart.com/fr/mouscron'>ici</a>",
+          "développement d’un système de pointage de salarié avec possibilités d’export de pointage en CSV"
+        ],
+        "Screenshots": [
+          "1.webp",
+          "2.webp"
+        ],
         "DateDebutContrat":"Octobre 2022",
         "DateFinContrat":"En poste",
         "Technos": [
@@ -11,13 +21,20 @@
             "TailwindCSS",
             "Git"
         ],
-        "Logo":"assets/logo/battlekart.png",
-        "Slug": "battlekart"
+        "Logo": true,
+        "Company": "battlekart"
     },
     {
         "Title":"Développeur FullStack",
         "ShortDescription":"Au cours de cette alternance, je conçois et mets en production un outil complet de gestion de formation, essentiel à la digitalisation des processus internes. Je développe notamment un système qui permet aux formateurs de créer et gérer des formations, d'y inscrire des utilisateurs, et de suivre leurs progrès détaillés (remarques, absences, notes). Cet outil offre également aux apprenants un accès direct à leurs informations personnalisées.",
-        "LongDescription":"",
+        "Missions":[
+            "Réalisation des différentes maquettes",
+            "Création de la structure de la base de donnnées",
+            "Développement de l'outil de gestion de formation",
+            "Accompagnement des formateurs sur le nouvel outil de gestion",
+            "Mise en production de l'outil"
+        ],
+        "Screenshots": [],
         "DateDebutContrat":"Octobre 2018",
         "DateFinContrat":"Septembre 2019",
         "Technos": [
@@ -26,13 +43,20 @@
             "PHP",
             "MySQL"
         ],
-        "Logo":"assets/logo/eurotunnel.png",
-        "Slug": "eurotunnel"
+        "Logo": true,
+        "Company": "eurotunnel"
     },
     {
         "Title":"Développeur Front-End",
         "ShortDescription":"j'ai développé un outil innovant permettant la génération de bandeaux de consentement utilisateurs (cookies), en réponse aux exigences de la RGPD alors émergentes. Cet outil offrait une personnalisation complète(couleurs, texte, forme et emplacement de la bannière), ce qui permettait aux sites cibles de se conformer à la charte graphique et aux obligations légales.",
-        "LongDescription":"",
+        "Missions":[
+            "Réalisation de la maquette de l'outil",
+            "Développement de la page ainsi que des fonctionnalités de l'outil",
+            "Mise en production"
+        ],
+        "Screenshots": [
+            "1.webp"
+        ],
         "DateDebutContrat":"Fevrier 2018",
         "DateFinContrat":"Juillet 2018",
         "Technos": [
@@ -41,13 +65,14 @@
             "Javascript",
             "Bootstrap"
         ],
-        "Logo":"assets/logo/meetyourdata.png",
-        "Slug": "meet-your-data"
+        "Logo":true,
+        "Company": "meetyourdata"
     },
     {
         "Title":"Développeur Front-End",
         "ShortDescription":"Dans le cadre d'une formation dédiée, j'ai développé un site internet complet dont l'objectif est d'explorer et de maîtriser Angular et ses composants avancés. Ce projet personnel met en lumière ma capacité à construire des applications robustes avec ce framework, consolidant ainsi mes connaissances pratiques à travers un cas d'usage concret.",
-        "LongDescription":"",
+        "Missions":[],
+        "Screenshots": [],
         "DateDebutContrat":"Février 2024",
         "DateFinContrat":"Février 2024",
         "Technos": [
@@ -55,7 +80,7 @@
             "TypeScript",
             "Git"
         ],
-        "Logo":-1,
-        "Slug": "angular-formation"
+        "Logo": false,
+        "Company": "angular-formation"
     }
 ]

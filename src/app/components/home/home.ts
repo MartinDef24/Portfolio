@@ -22,6 +22,7 @@ export class Home implements OnInit {
 
   ngOnInit() {
     this.projects = this.projectService.project();
+    console.log(this.projects)
   }
 
   nextProject(): void {

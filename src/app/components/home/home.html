@@ -1,21 +1,21 @@
 <!-- Titre de bienvenue -->
 <h1 class="text-center text-3xl mb-5">Bienvenue sur mon Portfolio</h1>
 <div class="flex justify-around w-[90%] mb-24">
-  <div class="w-[60%]"></div>
+  <div class="w-[60%]"><img class="mx-auto" width="300px" src="assets/moi.webp"></div>
   <div class="w-[40%] my-auto">
     <p class="text-justify">
       Bienvenue ! Je suis Martin, votre développeur Front-End Angular.
       <br>
       Mon objectif ? Transformer vos idées en interfaces web robustes et performantes.
       Sur ce portfolio, découvrez mes réalisations concrètes où j'ai mis à profit mes compétences en
-      Angular, TypeScript, JavaScript, HTML et CSS. Explorez mes projets et mon parcours,
+      Angular, React, TypeScript, JavaScript, HTML et CSS. Explorez mes projets et mon parcours,
       et n'hésitez pas à me contacter pour discuter de votre prochain défi technique !
     </p>
   </div>
 </div>
 
 <!-- Section Réalisations -->
-<h2 class="text-center text-3xl mb-5">Réalisations & Compétences Clés</h2>
+<h2 id="experiences" class="text-center text-3xl mb-5">Réalisations & Compétences Clés</h2>
 <p class="text-center w-3/4 mx-auto mb-10">
   Découvrez ci-dessous un aperçu de mes projets les plus significatifs, démontrant ma capacité à concevoir
   et développer des interfaces web robustes et performantes.
@@ -39,8 +39,10 @@
         <div class="w-[31%] flex-shrink-0">
           <div class="border-white border rounded-lg bg-white/[.40] p-5 h-full">
             <div class="h-40 flex items-center justify-center">
-              @if (project.Logo !== '-1') {
-                <img class="m-auto max-h-full max-w-full object-contain" [src]="project.Logo">
+              @if (project.Logo) {
+                <img class="m-auto max-h-full max-w-full object-contain" src="assets/logo/{{project.Company}}.png">
+              } @else {
+                <p class="text-3xl text-center">PROJET <br>PERSONNEL</p>
               }
             </div>
             <div class="text-center pb-7">
@@ -57,7 +59,7 @@
                   {{ project.Technos.join(', ') }}
                 </span>
               </div>
-              <a class="bg-white text-black rounded-xl px-5 py-3 inline-block mt-4" href="">
+              <a class="bg-white text-black rounded-xl px-5 py-3 inline-block mt-4 cursor-pointer" href="{{project.Company}}">
                 En savoir plus
               </a>
             </div>
@@ -72,5 +74,3 @@
     <i class="fa-solid fa-arrow-right text-white text-3xl"></i>
   </div>
 </div>
-
-<app-contact></app-contact>
