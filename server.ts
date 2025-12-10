@@ -1,15 +1,24 @@
 import express from 'express';
-import { join } from 'path';
+import { join, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { dirname } from 'node:path';
 
-const app = express();
-const PORT = Number(process.env['PORT']) || 4000;
+const server = express();
 
-// Servir les fichiers statiques générés par Angular
-app.use(express.static(join(__dirname, 'portfolio')));
+// Chemin vers le dossier dist/portfolio
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const distFolder = resolve(__dirname, 'dist/portfolio');
 
-// Rediriger toutes les autres routes vers index.html (pour le router Angular)
-app.get('*', (req, res) => {
-  res.sendFile(join(__dirname, 'portfolio', 'index.html'));
+// Servir les fichiers statiques
+server.use(express.static(distFolder));
+
+// Toutes les autres routes renvoient index.html
+server.get('*', (req, res) => {
+  res.sendFile(join(distFolder, 'index.html'));
 });
 
-app.listen(PORT, () => console.log(`Serveur démarré sur http://localhost:${PORT}`));
+// Démarrer le serveur
+const port = Number(process.env['PORT']) || 4000;
+server.listen(port, () => {
+  console.log(`Serveur démarré sur http://localhost:${port}`);
+});
