@@ -1,14 +1,17 @@
-# ... (PHASE 1: Build)
-# ... (votre ligne RUN node_modules/.bin/ng build --base-href / ici)
+# PHASE 1: Build the Angular application
+# -------------------------------------
+# Ligne 2 : Définition de l'alias
+FROM node:20-alpine AS angular_builder 
+
+# ... (toutes les lignes de build Node.js)
 
 # PHASE 2: Serve the application using NGINX
-FROM node:20-alpine AS builder
+# -----------------------------------------
+FROM nginx:alpine
 
-# 1. Copie le fichier de configuration NGINX personnalisé
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# ... (votre ligne COPY nginx.conf)
 
-# 2. Copie les fichiers compilés (votre chemin exact)
-COPY --from=builder /app/dist/portfolio/browser /usr/share/nginx/html
+# Ligne de copie (COPY)
+COPY --from=angular_builder /app/dist/portfolio/browser /usr/share/nginx/html
 
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+# ... (reste du Dockerfile)
