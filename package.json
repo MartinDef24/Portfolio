@@ -7,8 +7,8 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --configuration production",
+    "start": "node dist/portfolio/server.js",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
