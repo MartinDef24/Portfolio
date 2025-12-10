@@ -2,7 +2,7 @@
 # ... (votre ligne RUN node_modules/.bin/ng build --base-href / ici)
 
 # PHASE 2: Serve the application using NGINX
-FROM nginx:alpine
+FROM node:20-alpine AS builder
 
 # 1. Copie le fichier de configuration NGINX personnalisé
 COPY nginx.conf /etc/nginx/conf.d/default.conf
