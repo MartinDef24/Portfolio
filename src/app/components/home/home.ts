@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Contact } from "../contact/contact";
 import { ProjectsService } from "../../services/projects/projects-service";
 import { ProjectInterface } from "../../interfaces/project-interface";
 
 @Component({
   selector: 'app-home',
-  imports: [Contact, CommonModule],
+  imports: [CommonModule],
   standalone: true,
   templateUrl: './home.html',
   styleUrls: ['./home.css']
