@@ -15,7 +15,7 @@ COPY . .
 
 # Run the Angular build command
 # --base-href / est crucial pour le routage dans le conteneur
-RUN npm run build -- --base-href /
+RUN node_modules/.bin/ng build --base-href /
 
 # PHASE 2: Serve the application using NGINX (Lightweight production server)
 FROM nginx:alpine
