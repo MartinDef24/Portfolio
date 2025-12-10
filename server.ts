@@ -15,8 +15,10 @@ export function app(): express.Express {
   server.set('view engine', 'html');
   server.set('views', browserDist);
 
+  // Servir les fichiers statiques
   server.get('*.*', express.static(browserDist, { maxAge: '1y' }));
 
+  // SSR pour toutes les autres routes
   server.get('*', (req, res, next) => {
     const { protocol, originalUrl, baseUrl, headers } = req;
 
@@ -35,9 +37,11 @@ export function app(): express.Express {
 }
 
 function run(): void {
-  const port = process.env['PORT'] || 4000;
+  const port = process.env['PORT'] ? parseInt(process.env['PORT'], 10) : 4000;
   const server = app();
-  server.listen(port, () => console.log(`Serveur démarré sur http://localhost:${port}`));
+  server.listen(port, '0.0.0.0', () =>
+    console.log(`Serveur démarré sur http://0.0.0.0:${port}`)
+  );
 }
 
 run();
