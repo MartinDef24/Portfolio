@@ -8,7 +8,7 @@
   "scripts": {
   "ng": "ng",
   "build": "ng build --configuration production",
-  "start": "npx serve -s dist/portfolio -l $PORT",
+  "start": "ng serve",
   "watch": "ng build --watch --configuration development",
   "test": "ng test"
 },
