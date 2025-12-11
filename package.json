@@ -6,12 +6,12 @@
     "npm": ">=8"
   },
   "scripts": {
-    "ng": "ng",
-    "build": "ng build --configuration production",
-    "start": "npx serve -s dist/portfolio -l $PORT",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
-  },
+  "ng": "ng",
+  "build": "ng build --configuration production",
+  "start": "ng serve", 
+  "watch": "ng build --watch --configuration development",
+  "test": "ng test"
+},
   "private": true,
   "dependencies": {
     "@angular/animations": "^20.0.5",
